@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "24e6ceae7ccb0d5b",
+        "id": "b8b02172e35ff480",
         "type": "tabs",
         "children": [
           {
-            "id": "9d70e11508061f08",
+            "id": "bcf72c76111ef7d3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -169,9 +169,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "9d70e11508061f08",
+  "active": "be56f9bc06bc95b7",
   "lastOpenFiles": [
-    "Untitled.base",
-    "Stella Dev Notes.md"
+    "2025-09-05.md",
+    "Stella Dev Notes.md",
+    "Untitled.base"
   ]
 }
