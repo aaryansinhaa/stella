@@ -9,12 +9,14 @@ type Lexer struct {
 	ch           byte // current char under examination
 }
 
+// Lexer Constructor
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
 	l.readChar()
 	return l
 }
 
+// readChar gives us the next character and advance our position in the input string
 func (l *Lexer) readChar() {
 	// l.readPosition is the index of the next character to read
 	// l.position is the index of the current character
@@ -33,12 +35,25 @@ func (l *Lexer) readChar() {
 	l.readPosition += 1
 }
 
+// NextToken lexes the next token from the input and returns it
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 	l.skipWhitespace()
 	switch l.ch {
+	case '!':
+		tok = newToken(token.BANG, l.ch)
 	case '=':
 		tok = newToken(token.ASSIGN, l.ch)
+	case '-':
+		tok = newToken(token.MINUS, l.ch)
+	case '/':
+		tok = newToken(token.SLASH, l.ch)
+	case '*':
+		tok = newToken(token.ASTERISK, l.ch)
+	case '<':
+		tok = newToken(token.LT, l.ch)
+	case '>':
+		tok = newToken(token.GT, l.ch)
 	case ';':
 		tok = newToken(token.SEMICOLON, l.ch)
 	case '(':
@@ -73,6 +88,7 @@ func (l *Lexer) NextToken() token.Token {
 	return tok
 }
 
+// ---------------------HELPER FUNCTIONS---------------------
 func newToken(tokenType token.TokenType, ch byte) token.Token {
 	return token.Token{
 		Type:    tokenType,
@@ -111,3 +127,5 @@ func (l *Lexer) readNumber() string {
 func isDigit(ch byte) bool {
 	return '0' <= ch && ch <= '9'
 }
+
+// ---------------------HELPER FUNCTIONS END---------------------
