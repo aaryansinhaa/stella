@@ -110,3 +110,7 @@ type Lexer struct {
 **==TODO: Implement support for UNICODE==**.
 
 ---
+# Parser
+Stella uses recursive descent parser! and in particular, it’s a “top down operator precedence” parser, sometimes called “Pratt parser”, after its inventor Vaughan Pratt.
+
+
